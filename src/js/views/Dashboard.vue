@@ -26,8 +26,8 @@
               </div>
             </div>
             <p class="mt-3 mb-0 text-muted">
-              <span :class="`text-${stat.changeVariant} fw-bold`">
-                <i :class="`fas fa-arrow-${stat.changeDirection} me-1"></i>{{ stat.change }}
+              <span :class="'text-' + stat.changeVariant + ' fw-bold'">
+                <i :class="'fas fa-arrow-' + stat.changeDirection + ' me-1'"></i>{{ stat.change }}
               </span>
               <span class="text-nowrap">Since last month</span>
             </p>
