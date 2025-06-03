@@ -9,8 +9,9 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "preview:netlify": "netlify dev",
-    "postinstall": "netlify-lambda install",
+    "prebuild": "npm run clean",
+    "clean": "rimraf dist",
+    "serve": "vite preview --port 4173",
     "test": "echo \"Error: no test specified\" && exit 0"
   },
   "dependencies": {
@@ -23,8 +24,6 @@
     "date-fns": "^2.30.0",
     "dotenv": "^16.3.1",
     "leaflet": "^1.9.4",
-    "netlify-cli": "^15.0.0",
-    "netlify-lambda": "^2.0.15",
     "vite": "^4.4.0",
     "vite-plugin-pwa": "^0.16.0",
     "vue": "^3.3.0",
@@ -35,8 +34,7 @@
     "@netlify/plugin-sitemap": "^0.11.0",
     "@vitejs/plugin-basic-ssl": "^1.0.4",
     "@vitejs/plugin-vue": "^4.2.3",
-    "netlify-cli": "^15.0.0",
-    "netlify-lambda": "^2.0.15"
+    "rimraf": "^5.0.1"
   },
   "browserslist": [
     "defaults",

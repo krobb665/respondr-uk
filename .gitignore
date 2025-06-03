@@ -38,8 +38,10 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-# Local Netlify folder
-.netlify
+# Netlify
+.netlify/
+.netlify/*
+!.netlify/state.json
 
 # Optional npm cache directory
 .npm
