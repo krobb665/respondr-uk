@@ -1,0 +1,8 @@
+[settings]
+# Explicitly enable idiomatic version files for Node.js
+# This silences the warning about .nvmrc files
+idiomatic_version_file_enable_tools = ["node"]
+
+# Configure Node.js version management
+[tools]
+node = "18.18.2"  # Match the version in .nvmrc and netlify.toml

@@ -10,6 +10,7 @@
   CI = "false"
   NETLIFY_USE_YARN = "false"
   YARN_VERSION = "1.22.19"
+  MISE_ENABLE_IDIOMATIC_VERSION_FILE = "1"
 
 # SPA fallback for client-side routing
 [[redirects]]
