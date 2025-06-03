@@ -31,7 +31,7 @@
     "vue-toast-notification": "^3.0.0"
   },
   "devDependencies": {
-    "@netlify/plugin-sitemap": "^0.10.0",
+    "@netlify/plugin-sitemap": "^0.8.1",
     "@vitejs/plugin-basic-ssl": "^1.0.4",
     "@vitejs/plugin-vue": "^4.2.3",
     "rimraf": "^5.0.1"
