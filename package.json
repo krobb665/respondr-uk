@@ -30,6 +30,7 @@
     "rimraf": "^5.0.1",
     "vite": "^4.4.0",
     "vite-plugin-pwa": "^0.16.0",
+    "pinia": "^2.1.7",
     "vue": "^3.3.0",
     "vue-router": "^4.2.0",
     "vue-toast-notification": "^3.0.0"

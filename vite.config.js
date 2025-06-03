@@ -6,6 +6,14 @@ import basicSsl from '@vitejs/plugin-basic-ssl';
 
 export default defineConfig(({ command, mode }) => ({
   base: '/', // Set to your Netlify site's base URL if using a subdirectory
+  optimizeDeps: {
+    include: ['pinia']
+  },
+  build: {
+    rollupOptions: {
+      external: ['pinia']
+    }
+  },
   plugins: [
     vue(),
     basicSsl(),
