@@ -68,22 +68,12 @@ export default defineConfig(({ command, mode }) => ({
                 statuses: [0, 200]
               }
             }
-          },
-          {
-            urlPattern: /^https?:\/\/([^\/]*\.)?your-cdn\.com\/.*/i,
-            handler: 'StaleWhileRevalidate',
-            options: {
-              cacheName: 'cdn-cache',
-              expiration: {
-                maxEntries: 100,
-                maxAgeSeconds: 60 * 60 * 24 * 7 // 1 week
-              },
-              cacheableResponse: {
-                statuses: [0, 200]
-              }
-            }
           }
         ]
+      },
+      // Disable PWA in development to prevent build issues
+      devOptions: {
+        enabled: false
       }
     })
   ],

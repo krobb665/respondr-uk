@@ -1,7 +1,6 @@
 [build]
   command = "npm install && npm run build"
   publish = "dist"
-  # functions = "netlify/functions"  # Temporarily disabled as we're not using serverless functions
 
 [build.environment]
   NODE_VERSION = "18.20.2"  # Using LTS version
