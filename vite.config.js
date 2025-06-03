@@ -7,7 +7,7 @@ import basicSsl from '@vitejs/plugin-basic-ssl';
 export default defineConfig(({ command, mode }) => ({
   base: '/', // Set to your Netlify site's base URL if using a subdirectory
   optimizeDeps: {
-    include: ['pinia']
+    include: ['vue', 'vue-router', '@supabase/supabase-js', 'pinia']
   },
   build: {
     rollupOptions: {
@@ -125,7 +125,5 @@ export default defineConfig(({ command, mode }) => ({
   define: {
     'import.meta.env.DEPLOY_ENV': JSON.stringify(process.env.DEPLOY_ENV || 'development')
   },
-  optimizeDeps: {
-    include: ['vue', 'vue-router', '@supabase/supabase-js']
-  }
+
 }));

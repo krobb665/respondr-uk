@@ -4,7 +4,7 @@
       v-for="(toast, index) in toasts" 
       :key="index"
       class="toast show" 
-      :class="`bg-${toast.variant} text-white`"
+      :class="['bg-' + toast.variant, 'text-white']"
       role="alert" 
       aria-live="assertive" 
       aria-atomic="true"

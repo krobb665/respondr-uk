@@ -21,7 +21,7 @@
         <h1 class="h3 mb-0">Incident #{{ incident.id.slice(0, 8) }}</h1>
       </div>
       <div>
-        <span class="badge me-2" :class="`bg-${getStatusVariant(incident.status)}`">
+        <span class="badge me-2" :class="'bg-' + getStatusVariant(incident.status)">
           {{ formatStatus(incident.status) }}
         </span>
       </div>
@@ -35,10 +35,10 @@
           <div class="card-header d-flex justify-content-between align-items-center">
             <h5 class="mb-0">Incident Information</h5>
             <div>
-              <span class="badge me-2" :class="`bg-${getIncidentTypeVariant(incident.type)}`">
+              <span class="badge me-2" :class="'bg-' + getIncidentTypeVariant(incident.type)">
                 {{ formatIncidentType(incident.type) }}
               </span>
-              <span class="badge" :class="`bg-${getPriorityVariant(incident.priority)}`">
+              <span class="badge" :class="'bg-' + getPriorityVariant(incident.priority)">
                 {{ formatPriority(incident.priority) }}
               </span>
             </div>
@@ -145,7 +145,7 @@
                 <h6 class="mb-0">{{ assignedUnit.name }}</h6>
                 <small class="text-muted">{{ assignedUnit.type }}</small>
                 <div class="mt-1">
-                  <span class="badge" :class="`bg-${getUnitStatusVariant(assignedUnit.status)}`">
+                  <span class="badge" :class="'bg-' + getUnitStatusVariant(assignedUnit.status)">
                     {{ formatUnitStatus(assignedUnit.status) }}
                   </span>
                 </div>

@@ -14,14 +14,14 @@
     <!-- Stats Cards -->
     <div class="row mb-4">
       <div class="col-md-4 mb-3" v-for="stat in stats" :key="stat.title">
-        <div class="card h-100" :class="`border-${stat.variant}`">
+        <div class="card h-100" :class="['border-' + stat.variant]">
           <div class="card-body">
             <div class="d-flex justify-content-between align-items-center">
               <div>
                 <h6 class="text-uppercase text-muted mb-0">{{ stat.title }}</h6>
                 <h2 class="mb-0">{{ stat.value }}</h2>
               </div>
-              <div class="icon-shape" :class="`bg-${stat.variant}-subtle text-${stat.variant}`">
+              <div class="icon-shape" :class="['bg-' + stat.variant + '-subtle', 'text-' + stat.variant]">
                 <i :class="stat.icon"></i>
               </div>
             </div>
@@ -90,18 +90,18 @@
             >
               <td>#{{ incident.id.slice(0, 8) }}</td>
               <td>
-                <span class="badge" :class="`bg-${getIncidentTypeVariant(incident.type)}`">
+                <span class="badge" :class="'bg-' + getIncidentTypeVariant(incident.type)">
                   {{ formatIncidentType(incident.type) }}
                 </span>
               </td>
               <td>
-                <span class="badge" :class="`bg-${getPriorityVariant(incident.priority)}`">
+                <span class="badge" :class="'bg-' + getPriorityVariant(incident.priority)">
                   {{ formatPriority(incident.priority) }}
                 </span>
               </td>
               <td>{{ incident.location || 'N/A' }}</td>
               <td>
-                <span class="badge" :class="`bg-${getStatusVariant(incident.status)}`">
+                <span class="badge" :class="'bg-' + getStatusVariant(incident.status)">
                   {{ formatStatus(incident.status) }}
                 </span>
               </td>
