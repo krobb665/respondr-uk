@@ -14,7 +14,7 @@
     <!-- Stats Cards -->
     <div class="row mb-4">
       <div class="col-md-4 mb-3" v-for="stat in stats" :key="stat.title">
-        <div class="card h-100" :class="['border-' + stat.variant]">
+        <div class="card h-100" :class="'border-' + stat.variant">
           <div class="card-body">
             <div class="d-flex justify-content-between align-items-center">
               <div>

@@ -4,7 +4,7 @@
       v-for="(toast, index) in toasts" 
       :key="index"
       class="toast show" 
-      :class="['bg-' + toast.variant, 'text-white']"
+      :class="getToastClasses(toast.variant)"
       role="alert" 
       aria-live="assertive" 
       aria-atomic="true"
@@ -81,11 +81,23 @@ export default {
       delete window.showToast;
     });
 
+    const getToastClasses = (variant) => {
+      return {
+        'bg-primary': variant === 'primary',
+        'bg-success': variant === 'success',
+        'bg-danger': variant === 'danger',
+        'bg-warning': variant === 'warning',
+        'bg-info': variant === 'info',
+        'text-white': true
+      };
+    };
+
     return {
       toasts,
       showToast,
       removeToast,
-      getToastIcon
+      getToastIcon,
+      getToastClasses
     };
   }
 };
