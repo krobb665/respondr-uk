@@ -9,11 +9,7 @@ export default defineConfig(({ command, mode }) => ({
   optimizeDeps: {
     include: ['vue', 'vue-router', '@supabase/supabase-js', 'pinia']
   },
-  build: {
-    rollupOptions: {
-      external: ['pinia']
-    }
-  },
+
   plugins: [
     vue(),
     basicSsl(),
@@ -117,7 +113,8 @@ export default defineConfig(({ command, mode }) => ({
           'vendor': ['vue', 'vue-router', '@supabase/supabase-js'],
           'chart': ['chart.js'],
           'leaflet': ['leaflet']
-        }
+        },
+        external: ['pinia']
       }
     }
   },
