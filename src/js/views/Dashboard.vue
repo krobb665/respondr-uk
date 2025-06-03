@@ -21,13 +21,13 @@
                 <h6 class="text-uppercase text-muted mb-0">{{ stat.title }}</h6>
                 <h2 class="mb-0">{{ stat.value }}</h2>
               </div>
-              <div class="icon-shape" :class="['bg-' + stat.variant + '-subtle', 'text-' + stat.variant]">
+              <div class="icon-shape" :class="[`bg-${stat.variant}-subtle`, `text-${stat.variant}`]">
                 <i :class="stat.icon"></i>
               </div>
             </div>
             <p class="mt-3 mb-0 text-muted">
-              <span :class="'text-' + stat.changeVariant + ' fw-bold'">
-                <i :class="'fas fa-arrow-' + stat.changeDirection + ' me-1'"></i>{{ stat.change }}
+              <span :class="`text-${stat.changeVariant} fw-bold`">
+                <i :class="`fas fa-arrow-${stat.changeDirection} me-1`"></i>{{ stat.change }}
               </span>
               <span class="text-nowrap">Since last month</span>
             </p>
@@ -90,18 +90,13 @@
             >
               <td>#{{ incident.id.slice(0, 8) }}</td>
               <td>
-                <span class="badge" :class="'bg-' + getIncidentTypeVariant(incident.type)">
+                <span class="badge" :class="`bg-${getIncidentTypeVariant(incident.type)}`">
                   {{ formatIncidentType(incident.type) }}
                 </span>
-              </td>
-              <td>
-                <span class="badge" :class="'bg-' + getPriorityVariant(incident.priority)">
+                <span class="badge ms-2" :class="`bg-${getPriorityVariant(incident.priority)}`">
                   {{ formatPriority(incident.priority) }}
                 </span>
-              </td>
-              <td>{{ incident.location || 'N/A' }}</td>
-              <td>
-                <span class="badge" :class="'bg-' + getStatusVariant(incident.status)">
+                <span class="badge ms-2" :class="`bg-${getStatusVariant(incident.status)}`">
                   {{ formatStatus(incident.status) }}
                 </span>
               </td>
