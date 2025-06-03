@@ -105,7 +105,7 @@
                   @click="toggleResource(resource.id)"
                 >
                   <div class="d-flex align-items-center">
-                    <div class="form-check
+                    <div class="form-check">
                       <input 
                         type="checkbox" 
                         class="form-check-input me-2"
