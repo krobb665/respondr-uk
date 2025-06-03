@@ -11,6 +11,7 @@
   NETLIFY_USE_YARN = "false"
   YARN_VERSION = "1.22.19"
   MISE_ENABLE_IDIOMATIC_VERSION_FILE = "1"
+  NODE_ENV = "development"  # Ensure all dependencies are installed
 
 # Temporarily disable the sitemap plugin
 # [[plugins]]
