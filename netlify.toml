@@ -1,0 +1,66 @@
+[build]
+  command = "npm install && npm run build"
+  publish = "dist"
+  functions = "netlify/functions"
+
+[build.environment]
+  NODE_VERSION = "18"
+  NPM_VERSION = "9"
+  NODE_OPTIONS = "--max_old_space_size=4096"
+  CI = "false"
+
+# SPA fallback for client-side routing
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# Cache settings
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+# Static assets cache
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# Netlify plugins
+[[plugins]]
+  package = "@netlify/plugin-sitemap"
+
+[dev]
+  command = "npm run dev"
+  port = 5173
+  publish = "."
+  targetPort = 5173
+  framework = "vite"
+
+# Environment-specific settings
+[context.production]
+  command = "npm run build"
+  [context.production.environment]
+    NODE_ENV = "production"
+    VITE_APP_ENV = "production"
+
+[context.deploy-preview]
+  [context.deploy-preview.environment]
+    NODE_ENV = "development"
+    VITE_APP_ENV = "staging"
+
+[context.branch-deploy]
+  [context.branch-deploy.environment]
+    NODE_ENV = "development"
+    VITE_APP_ENV = "staging"
+
+[context.develop]
+  command = "npm run dev"
+  [context.develop.environment]
+    NODE_ENV = "development"
+    VITE_APP_ENV = "development"
